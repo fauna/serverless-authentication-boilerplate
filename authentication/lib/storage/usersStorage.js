@@ -17,7 +17,7 @@ const saveUser = (profile) => {
   // profile class: https://github.com/laardee/serverless-authentication/blob/master/src/profile.js
 
   // to enable FaunaDB as a user database enable
-  // return faunaUser.saveUser(profile);
+  return faunaUser.saveUser(profile);
 
   // to use dynamo as user database enable
   // return dynamoUser.saveUser(profile);
@@ -25,7 +25,7 @@ const saveUser = (profile) => {
   // to use cognito user pool as user database enable
   // return cognitoUser.saveOrUpdateUser(profile);
 
-  return Promise.resolve(true);
+  // return Promise.resolve(true);
 };
 
 exports = module.exports = {
