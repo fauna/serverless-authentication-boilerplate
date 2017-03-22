@@ -9,7 +9,7 @@ const createResponseData = (id) => {
       id
     },
     options: {
-      expiresIn: 15
+      expiresIn: 300
     }
   };
 

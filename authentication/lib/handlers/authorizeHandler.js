@@ -22,6 +22,7 @@ const authorize = (event, callback) => {
   let error = null;
   let policy;
   const authorizationToken = event.authorizationToken;
+  console.log('auth', event);
   if (authorizationToken) {
     try {
       // this example uses simple expiration time validation
@@ -30,11 +31,13 @@ const authorize = (event, callback) => {
       policy = utils.generatePolicy(data.id, 'Allow', event.methodArn);
       policy.context = policyContext(data);
     } catch (err) {
+      console.log("verify error", err);
       error = 'Unauthorized';
     }
   } else {
     error = 'Unauthorized';
   }
+  console.log('policy', policy);
   callback(error, policy);
 };
 
